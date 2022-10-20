@@ -10,26 +10,18 @@
 
 ## License
 
----
-
 [MIT License](https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_MIT)
 
 ## Authors
 
---- 
-
 * <a href="https://github.com/tendil">Me</a>
 * Some people with telegram chats 
-
----
 
 ## What I plan to add to this project:
 -  Added hotkeys so that you can return to the main menu if you make a wrong choice.
 - Improve the output interface (make a highlight, and when adding / changing / deleting a contact, display its name).
 - Make a function to display all users. 
 - Make the function of deleting the database, with confirmation, entering the user's password.
-
----
 
 ## Features:
 #### User Management:
@@ -47,8 +39,6 @@
 - Export CSV (In format: name, contact, email)
 
 ## Usage
-
----
 
 #### **Clone or download this repository**
 
