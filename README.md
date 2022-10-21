@@ -77,3 +77,17 @@ pip install -r requirements.txt
 python3 phonebook.py
 ```
 
+### Support
+
+## For support, telegram [@XllrepoDewelloper](https://t.me/XllrepoDewelloper)
+
+## Feedback
+
+## If you have any feedback, telegram [@XllrepoDewelloper](https://t.me/XllrepoDewelloper)
+
+## Contributing
+
+
+
+## Contributions are always welcome!
+
