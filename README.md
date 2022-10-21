@@ -79,15 +79,13 @@ python3 phonebook.py
 
 ### Support
 
-## For support, telegram [@XllrepoDewelloper](https://t.me/XllrepoDewelloper)
+### For support, telegram [@XllrepoDewelloper](https://t.me/XllrepoDewelloper)
 
 ## Feedback
 
-## If you have any feedback, telegram [@XllrepoDewelloper](https://t.me/XllrepoDewelloper)
+### If you have any feedback, telegram [@XllrepoDewelloper](https://t.me/XllrepoDewelloper)
 
 ## Contributing
 
-
-
-## Contributions are always welcome!
+### Contributions are always welcome!
 
