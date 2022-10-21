@@ -14,10 +14,10 @@
 <summary>
 Image's of this project 📈
 </summary>
-<img src="https://github.com/tendil/sqlite3-phonebook/blob/main/pick/user_menu.png" height="450" width="450">
-<img src="https://github.com/tendil/sqlite3-phonebook/blob/main/pick/add_user.png" height="450" width="450">
-<img src="https://github.com/tendil/sqlite3-phonebook/blob/main/pick/contact_menu.png" height="450" width="450">
-<img src="https://github.com/tendil/sqlite3-phonebook/blob/main/pick/show_all_contacts.png" height="450" width="450">
+<img src="https://github.com/tendil/sqlite3-phonebook/blob/main/pick/user_menu.png" height="400" width="400">
+<img src="https://github.com/tendil/sqlite3-phonebook/blob/main/pick/add_user.png" height="400" width="400">
+<img src="https://github.com/tendil/sqlite3-phonebook/blob/main/pick/contact_menu.png" height="400" width="400">
+<img src="https://github.com/tendil/sqlite3-phonebook/blob/main/pick/show_all_contacts.png" height="400" width="400">
 <img src="https://github.com/tendil/sqlite3-phonebook/blob/main/pick/export.png" height="400" width="800">
 </details>
 
