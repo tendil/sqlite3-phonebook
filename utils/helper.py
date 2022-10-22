@@ -3,14 +3,6 @@
 import sys
 import time
 import os
-# import keyboard
-# import phonebook
-
-# def back_to_menu():
-# 	"""Returns the user to the main menu. Useful for the wrong choice"""
-# 	 keyboard.add_hotkey("ctrl+alt+a", phonebook._input_contact_menu_choice())
-# 	keyboard.wait("ctrl + b")
-# 	return phonebook._contacts_management()
 
 def clear_screen():
 	"""Clears the screen after switching menu"""
@@ -34,10 +26,12 @@ def scrub(table_name):
 
 def select_attributes():
 	"""Returns user selected column"""
-	print('\n\033[38;5;212mWhich attribute you want to change.\033[0;0m\n')
-	print('1. Name')
-	print('2. Phone Number')
-	print('3. Email\n')
+	print(
+		'\n\033[38;5;212mWhich attribute you want to change.\033[0;0m\n'
+		'\n1. Name\n'
+		'2. Phone Number\n'
+		'3. Email\n'
+	)
 	choice = int(input('\n\033[48;5;88mInput choice:\033[0;0m\n '))
 
 	clear_screen()

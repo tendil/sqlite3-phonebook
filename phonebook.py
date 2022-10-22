@@ -1,17 +1,16 @@
 """phonebook is a simple contact management tool written in python."""
 
-from utils import user
-from utils import contacts
-from utils import helper
-
+from utils import user, contacts, helper
 
 def _input_user_menu_choice():
 	"""Displays user management options and returns user's input choice"""
 	print('~' * 20,'\n\033[38;5;63mUser Management Menu\033[0;0m\n' + '~' * 20)
-	print('\n1. Add user')
-	print('2. Delete user')
-	print('3. Select user')
-	print('0. Exit\n')
+	print(
+		'\n1. Add user'
+		'\n2. Delete user'
+		'\n3. Select user'
+		'\n0. Exit\n'
+	)
 
 	choice = int(input('Input choice: '))
 	helper.clear_screen()
@@ -24,17 +23,17 @@ def _input_user_menu_choice():
 def _input_contact_menu_choice():
 	"""Displays contact management options and returns user's input choice"""
 	choice = 0
-	print()
-	print('~' * 23,'\n\033[38;5;63mContact Management Menu\033[0;0m\n' + '~' * 23)
-	print('\n1. Show all contacts')
-	print('2. Add contact')
-	print('3. Delete contact')
-	print('4. Search contact')
-	print('5. Modify contact')
-	print('6. Import CSV')
-	print('7. Export CSV')
-	print('8. Switch to user management mode')
-	print('0. Exit\n')
+	print(
+		'\n' + '~' * 23,'\n\033[38;5;63mContact Management Menu\033[0;0m\n' + '~' * 23,
+		'\n1. Show all contacts'
+		'\n2. Add contact'
+		'\n3. Delete contact'
+		'\n4. Search contact'
+		'\n5. Modify contact'
+		'\n6. Import CSV'
+		'\n7. Export CSV'
+		'\n8. Switch to user management mode'
+		'\n9. Exit\n')
 
 	choice = int(input('Input choice: '))
 	helper.clear_screen()
