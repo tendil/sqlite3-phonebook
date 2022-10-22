@@ -66,8 +66,12 @@ cd sqlite3_phonebook
 ```
 
 ```python
-source /home/noname/RaspakovkaGovna/sqlite3_phonebook/venv/bin/activate
+python3 -m venv venv
 ```
+
+```python
+source venv/bin/activate
+ ```
 
 ```python
 pip install -r requirements.txt

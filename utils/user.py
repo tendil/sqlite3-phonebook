@@ -1,7 +1,6 @@
 """Module for user table management."""
 
-from utils import contacts
-from utils import helper
+from utils import contacts, helper
 import hashlib
 import sqlite3
 import getpass
@@ -60,15 +59,15 @@ def _input_credentials():
 
 def _print_credential_criteria():
 	"""Prints the username and password criteria on the screen."""
-	print('\n\n\033[38;5;212mUsername specification: At least 4 character long. Can contain alphabets or numbers only\033[0;0m')
-
-	print('\n\033[38;5;212mPassword specifications:\033[0;0m')
-	print('\033[38;5;212mAt least 8 characters\033[0;0m')
-	print('\033[38;5;212mAt least one lowercase alphabet [a-z]\033[0;0m')
-	print('\033[38;5;212mAt least one uppercase alphabet [A-Z]\033[0;0m')
-	print('\033[38;5;212mAt least one digit [0-9]\033[0;0m')
-	print('\033[38;5;212mAt least one special character [@, #, $, &, +, -, *, ?, ., :, /, ;]\033[0;0m\n')
-
+	print(
+		'\n\n\033[38;5;212mUsername specification: At least 4 character long. Can contain alphabets or numbers only\033[0;0m'
+		'\n\033[38;5;212mPassword specifications:\033[0;0m'
+		'\n\033[38;5;212mAt least 8 characters\033[0;0m'
+		'\n\033[38;5;212mAt least one lowercase alphabet [a-z]\033[0;0m'
+		'\n\033[38;5;212mAt least one uppercase alphabet [A-Z]\033[0;0m'
+		'\n\033[38;5;212mAt least one digit [0-9]\033[0;0m'
+		'\n\033[38;5;212mAt least one special character [@, #, $, &, +, -, *, ?, ., :, /, ;]\033[0;0m\n'
+	)
 
 def _verify_credential_criteria(username, password):
 	"""Verifies the credential criteria. Reprompt user if fails.
