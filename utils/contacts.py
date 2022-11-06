@@ -1,11 +1,14 @@
 """Module for contacts table management for each user."""
+import csv
+# import csv
+import re
+import sqlite3
 
 from prettytable import PrettyTable
-import sqlite3
-import csv
-import re
 
-from utils import user, helper
+# from prettytable import PrettyTable
+
+from utils import user, helper  # , helper
 
 # Global sqlite3 connection and cursor
 conn = sqlite3.connect('material.db')
@@ -100,7 +103,7 @@ def add_contact():
 	contact_tuple = tuple(contact_list)
 	try:
 		# insert the value in username table
-		c.execute(f'''INSERT INTO {_tablename} 
+		c.execute(f'''INSERT INTO {_tablename}
 						VALUES (?, ?, ?);''', contact_tuple)
 		conn.commit()
 		return True
@@ -128,7 +131,7 @@ def modify_contact():
 			if _verify_contact_name(modified_name) is False:
 				return False
 
-			c.execute(f'''UPDATE {_tablename} 
+			c.execute(f'''UPDATE {_tablename}
 							SET name = ?
 							WHERE LOWER(name) = ?;''', (modified_name, contact_name.lower(),))
 			conn.commit()
@@ -142,7 +145,7 @@ def modify_contact():
 			if _verify_contact_num(modified_num) is False:
 				return False
 
-			c.execute(f'''UPDATE {_tablename} 
+			c.execute(f'''UPDATE {_tablename}
 							SET phno = ?
 							WHERE LOWER(name) = ?;''', (modified_num, contact_name.lower(),))
 			conn.commit()
@@ -158,7 +161,7 @@ def modify_contact():
 			elif _verify_contact_email(modified_mail) is False:
 				return False
 
-			c.execute(f'''UPDATE {_tablename} 
+			c.execute(f'''UPDATE {_tablename}
 							SET email = ?
 							WHERE LOWER(name) = ?;''', (modified_mail, contact_name.lower(),))
 			conn.commit()
@@ -208,8 +211,7 @@ def search_contact():
 
 def import_csv():
 	"""Imports a CSV from the current directory and stores the data into table.
-
-	Assuming the CSV will be in the following format: name,number,email
+	Assuming the CSV will be in the following format: name, number, email
 	"""
 	print('~' * 10, '\n\033[38;5;63mImport CSV\033[0;0m\n' + '~' * 10)
 	filename = ''
@@ -228,7 +230,7 @@ def import_csv():
 				# if email doesn't exist
 				if len(row) == 2:
 					row.append('NULL')
-				c.execute(f'''INSERT INTO {_tablename} 
+				c.execute(f'''INSERT INTO {_tablename}
 								VALUES (?, ?, ?)''', tuple(row))
 			else:
 				conn.commit()

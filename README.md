@@ -34,8 +34,7 @@ Image's of this project 📈
 -  Added hotkeys so that you can return to the main menu if you make a wrong choice.
 - Improve the output interface (make a highlight, and when adding / changing / deleting a contact, display its name).
 - Make a function to display all users. 
-- Make the function of deleting the database, with confirmation, entering the user's password.
-
+- Apply SQLAlchemy
 ## Features:
 #### User Management:
 - Add User
@@ -52,12 +51,6 @@ Image's of this project 📈
 - Export CSV (In format: name, contact, email)
 
 ## Usage
-
-#### **Clone or download this repository**
-
-```python
-git clone 
-```
 
 #### We go to the terminal and go to the directory with the repository:
 
