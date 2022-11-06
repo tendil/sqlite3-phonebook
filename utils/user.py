@@ -1,10 +1,11 @@
 """Module for user table management."""
 
-from utils import contacts, helper
-import hashlib
-import sqlite3
 import getpass
+import hashlib
 import re
+import sqlite3
+
+from utils import contacts, helper
 
 # opening database and setting connection
 conn = sqlite3.connect('material.db')
@@ -43,35 +44,32 @@ def _user_auth(username, password):
 		return False
 
 	record = c.fetchone()
-	if record is None:
-		return False
-	else:
-		return True
+	return not (record is None)
 
 
 def _input_credentials():
 	"""Inputs and returns username and password."""
 	username = input('\nUsername: ')
-	password = getpass.getpass('Password: ')
+	password = getpass.getpass('\nPassword: ')
 
-	return (username, password)
+	return username, password
 
 
 def _print_credential_criteria():
 	"""Prints the username and password criteria on the screen."""
-	print(
-		'\n\n\033[38;5;212mUsername specification: At least 4 character long. Can contain alphabets or numbers only\033[0;0m'
-		'\n\033[38;5;212mPassword specifications:\033[0;0m'
-		'\n\033[38;5;212mAt least 8 characters\033[0;0m'
-		'\n\033[38;5;212mAt least one lowercase alphabet [a-z]\033[0;0m'
-		'\n\033[38;5;212mAt least one uppercase alphabet [A-Z]\033[0;0m'
-		'\n\033[38;5;212mAt least one digit [0-9]\033[0;0m'
-		'\n\033[38;5;212mAt least one special character [@, #, $, &, +, -, *, ?, ., :, /, ;]\033[0;0m\n'
-	)
+	criteria = """\033[38;5;212mUsername specification: At least 4 character long. Can contain alphabets or numbers only\033[0;0m
+\033[38;5;212mPassword specifications:\033[0;0m
+\033[38;5;212mAt least 8 characters\033[0;0m
+\033[38;5;212mAt least one lowercase alphabet [a-z]\033[0;0m
+\033[38;5;212mAt least one uppercase alphabet [A-Z]\033[0;0m
+\033[38;5;212mAt least one digit [0-9]\033[0;0m
+\033[38;5;212mAt least one special character [@, #, $, &, +, -, *, ?, ., :, /, ;]\033[0;0m
+	"""
+	print(criteria)
+
 
 def _verify_credential_criteria(username, password):
 	"""Verifies the credential criteria. Reprompt user if fails.
-
     username: must be at least 4 alphanumeric characters long
     password: must be at least 8 characters long. Further password criteria described below
     """
@@ -93,7 +91,7 @@ def _verify_credential_criteria(username, password):
 	elif not re.search('[_:@#$&+-?.*;/]', password):
 		flag = False
 
-	if flag == False:
+	if not flag:
 		print('\033[48;5;88mError: Password did not match the specifications!\033[0;0m')
 		return False
 
@@ -109,7 +107,7 @@ def _encryption(login_details):
 def add_user():
 	"""Adds user to database if it doesn't exist and create a contacts table for him."""
 	_print_credential_criteria()
-	print('~' * 8,'\n\033[38;5;63mAdd user\033[0;0m\n' + '~' * 8)
+	print('~' * 8, '\n\033[38;5;63mAdd user\033[0;0m\n' + '~' * 8)
 	username, password = _input_credentials()
 	# Prompt user for username and password again if credential criteria doesn't match
 	if _verify_credential_criteria(username, password) is False:
@@ -135,7 +133,7 @@ def add_user():
             phno VARCHAR(20) NOT NULL,
             email VARCHAR(255) NOT NULL);
             """)
-
+		#_contacts_management()
 		conn.commit()
 
 		return True
@@ -143,7 +141,7 @@ def add_user():
 
 def remove_user():
 	"""Removes a user and associated contact table from the database."""
-	print('~' * 12,'\n\033[38;5;63mDeleted user\033[0;0m\n' + '~' * 12)
+	print('~' * 12, '\n\033[38;5;63mDeleted user\033[0;0m\n' + '~' * 12)
 	username, password = _input_credentials()
 
 	if _user_auth(username, password):
@@ -162,7 +160,7 @@ def remove_user():
 
 def select_user():
 	"""Selects a user for current contact operations."""
-	print('~' * 11,'\n\033[38;5;63mSelect user\033[0;0m\n' + '~' * 11)
+	print('~' * 11, '\n\033[38;5;63mSelect user\033[0;0m\n' + '~' * 11)
 	username, password = _input_credentials()
 
 	if _user_auth(username, password):
